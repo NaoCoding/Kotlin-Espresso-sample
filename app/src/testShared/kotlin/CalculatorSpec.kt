@@ -72,4 +72,31 @@ abstract class CalculatorSpec {
         onView(withId(R.id.button_calc)).perform(click())
         onView(withId(R.id.field)).check(matches(withText("${333 / 100.0}")))
     }
+    @Test
+    fun testAC() {
+        onView(withId(R.id.button_2)).perform(click())
+        onView(withId(R.id.button_all_clear)).perform(click())
+        onView(withId(R.id.field)).check(matches(withText("${0}")))
+        onView(withId(R.id.button_3)).perform(click())
+        onView(withId(R.id.button_3)).perform(click())
+        onView(withId(R.id.button_3)).perform(click())
+        onView(withId(R.id.field)).check(matches(withText("${333}")))
+        onView(withId(R.id.button_div)).perform(click())
+        onView(withId(R.id.button_1)).perform(click())
+        onView(withId(R.id.button_0)).perform(click())
+        onView(withId(R.id.button_0)).perform(click())
+        onView(withId(R.id.button_all_clear)).perform(click())
+        onView(withId(R.id.field)).check(matches(withText("${0}")))
+        onView(withId(R.id.button_1)).perform(click())
+        onView(withId(R.id.button_2)).perform(click())
+        onView(withId(R.id.button_3)).perform(click())
+        onView(withId(R.id.button_mul)).perform(click())
+        onView(withId(R.id.button_7)).perform(click())
+        onView(withId(R.id.button_0)).perform(click())
+        onView(withId(R.id.button_0)).perform(click())
+        onView(withId(R.id.button_calc)).perform(click())
+        onView(withId(R.id.button_all_clear)).perform(click())
+        onView(withId(R.id.field)).check(matches(withText("${0}")))
+    }
+
 }
